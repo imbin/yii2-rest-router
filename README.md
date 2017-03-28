@@ -37,11 +37,11 @@ Advanced ```frontend/config/main.php```
 
 ## Code
 
-Code File: frontend/modules/simple/Module.php
+Code File: frontend/modules/sample/Module.php
 ```php
 <?php
 
-namespace frontend\modules\simple;
+namespace frontend\modules\sample;
 
 /**
  * order module definition class
@@ -51,7 +51,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'frontend\modules\simple\controllers';
+    public $controllerNamespace = 'frontend\modules\sample\controllers';
 
     /**
      * @inheritdoc
@@ -64,24 +64,24 @@ class Module extends \yii\base\Module
 
 ```
 
-Code File: frontend/modules/simple/config/routes_default.php
+Code File: frontend/modules/sample/config/routes_default.php
 ```php
 
 <?php
 return [
-    'GET simple/list/<page:\d+>/<pageSize:\d+>' => 'simple/default/index',
-    'GET simple/<id:\d+>' => 'simple/default/detail',
-    'POST simple/cate/<cate:(a|b|c)>' => 'simple/default/category',
+    'GET sample/list/<page:\d+>/<pageSize:\d+>' => 'sample/default/index',
+    'GET sample/<id:\d+>' => 'sample/default/detail',
+    'POST sample/cate/<cate:(a|b|c)>' => 'sample/default/category',
     //more...
 ];
 
 ```
 
-Code File: frontend/modules/simple/controllers/DefaultController.php
+Code File: frontend/modules/sample/controllers/DefaultController.php
 ```php
 
 <?php
-namespace frontend\modules\simple\controllers;
+namespace frontend\modules\sample\controllers;
 
 use yii;
 use yii\web\Controller;
@@ -113,14 +113,14 @@ class DefaultController extends Controller
 ```
 
 # id=1
-http://localhost/simple/1
+http://localhost/sample/1
 
 # first page
-http://localhost/simple/list/1
+http://localhost/sample/list/1
 
 # the first page and 10 rows per page
-http://localhost/simple/list/1/10
+http://localhost/sample/list/1/10
 
 # category=a
-http://localhost/simple/cate/a
+http://localhost/sample/cate/a
 ```
